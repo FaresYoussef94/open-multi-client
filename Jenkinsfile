@@ -1,6 +1,12 @@
 pipeline{
     agent any
 
+    environment {
+        VERSION = buildVersion()
+        DOCKER_REPO = 'faresyoussef'
+        DOCKER_IMAGE = 'mutli-client'
+    }
+
     stages{
 
         stage('Build'){
@@ -15,9 +21,10 @@ pipeline{
             }
         }
 
-        stage('Deploy'){
+        stage('Dockerizing'){
             steps{
-                echo 'Deploying ...'
+                echo 'Creating the docker image ...'
+                ls
             }
         }
 
