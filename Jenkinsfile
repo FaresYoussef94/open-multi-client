@@ -22,7 +22,7 @@ pipeline{
 
         stage('Dockerizing'){
             steps{
-                echo 'Creating the docker image ... $BUILD_NUMBER'
+                echo 'Creating the docker image ... ${BUILD_NUMBER}'
                 sh 'ls'
             }
         }
