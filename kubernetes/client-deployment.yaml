@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 3 #The number of different Pods that is created by the template
+  selector: #Similar to the selector of the service. This is used to get a handle to the pod created from the template below
+    matchLabels:
+      component: web
+  template: #This defines the template of the pod to be created
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: faresyoussef/multi-client
+          ports:
+            - containerPort: 3000
