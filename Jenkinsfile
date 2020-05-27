@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     environment {
-        VERSION = buildVersion()
+        VERSION = $BUILD_NUMBER
         DOCKER_REPO = 'faresyoussef'
         DOCKER_IMAGE = 'mutli-client'
     }
