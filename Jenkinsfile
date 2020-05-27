@@ -24,7 +24,7 @@ pipeline{
         stage('Dockerizing'){
             steps{
                 echo 'Creating the docker image ...'
-                ls
+                sh 'ls'
             }
         }
 
